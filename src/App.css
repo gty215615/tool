@@ -1,0 +1,153 @@
+div,
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+li {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  font-size: 58px;
+  text-align: center;
+  line-height: 80px;
+  margin: 0px 0px -2px -2px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.centered {
+  margin: 50px auto;
+  text-align: center;
+}
+
+form {
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  margin-right: 0;
+  padding-right: 0;
+  height: 50px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+input[type="button"] {
+  padding: 8px;
+  color: #8a97a0;
+  background-color: #e8eeef;
+  font-size: 16px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 50%;
+  border: 1px solid #d4d7d8;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
+}
+
+input:required {
+  background-color: #e8eeef;
+}
+
+input:required:invalid {
+  background-color: rgba(229, 255, 0, 0.295);
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #fff;
+  background-color: #4bc970;
+  font-size: 15px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+  margin-bottom: 10px;
+}
+
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+.left {
+  float: left;
+  height: auto;
+  padding: 0;
+  list-style: none;
+  margin: 0 auto;
+  padding-left: 2px;
+}

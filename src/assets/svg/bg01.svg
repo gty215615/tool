@@ -1,0 +1,12 @@
+<svg width="80" height="80" xmlns="http://www.w3.org/2000/svg" version="1.1">
+
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" fill-opacity="0" stroke="#70d39d" stroke-dasharray="4,2,4" d="m-1,-1l81,81"/>
+  <path id="svg_2" fill-opacity="0" stroke="#70d39d" stroke-dasharray="4,2,4" d="m-1,81l81,-81"/>
+  <path id="svg_3" fill-opacity="0" stroke="#70d39d" stroke-dasharray="4,2,4" d="m-2,40l82,0"/>
+  <path id="svg_4" fill-opacity="0" stroke="#70d39d" stroke-dasharray="4,2,4" d="m40,-2l0,82"/>
+  <path stroke="#70d39d" id="svg_5" fill-opacity="0" stroke-width="2" d="m1,1l78,0l0,78l-78,0l0,-78z"/>
+  <path stroke="#70d39d" id="svg_6" fill-opacity="0" stroke-dasharray="4,4" d="m18.11435,18.18104l44.24318,-0.23125l-0.51334,43.89122l-43.93624,-0.73509l0.2064,-42.92488z"/>
+ </g>
+</svg>

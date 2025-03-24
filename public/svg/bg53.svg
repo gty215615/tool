@@ -1,0 +1,11 @@
+<svg width="80px" height="80px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+<ellipse  cx="40" cy="40" rx="32" ry="39" stroke-width="2" stroke="#ff4242" fill-opacity="0"></ellipse>
+
+<ellipse  cx="40" cy="40" rx="22" ry="30" stroke-dasharray="4,4" stroke-width="1" stroke="#ff4242" fill-opacity="0"></ellipse>
+
+<path d="M8 40 L72 40" stroke-dasharray="4,4" stroke-width="1" stroke="#ff4242" fill-opacity="0"/>
+
+<path d="M40 -2 L40 80" stroke-dasharray="4,4" stroke-width="1" stroke="#ff4242" fill-opacity="0"/>
+
+</svg>
