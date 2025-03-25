@@ -3,13 +3,14 @@ import "./App.css";
 import { CopySetting } from "./App";
 import PageFooter from "./PageFooter";
 import { CopyPage, RowFontCount } from "./hooks/useHandle";
+import PageHeader from "./PageHeader";
 
 const Print: FC<
   CopySetting & {
-    copyBook:CopyPage[]
+    copyBook: CopyPage[];
   }
 > = (props) => {
-  const {copyBook} = props;
+  const { copyBook } = props;
   const getColor = (index: number) => {
     let r;
     let g;
@@ -59,18 +60,24 @@ const Print: FC<
     <div style={{ paddingLeft: "10px" }}>
       <div
         className="right"
-        style={{ width: `${RowFontCount * 80}px`, margin: "0px auto" }}
+        style={{
+          width: `${RowFontCount * 80}px`,
+          margin: "0px auto",
+          fontFamily: props.fontFamily,
+          color:getColor(0)
+        }}
       >
         {copyBook.map((page, index) => {
           return (
             <>
+              <PageHeader title={props.title}></PageHeader>
               <ul key={index} style={{ paddingLeft: "2px" }}>
                 {page.map((char, charIndex) => {
                   return (
                     <li
                       style={{
                         backgroundImage: `url(svg/bg${props.bgStyle}${props.bgColor}.svg)`,
-                        fontFamily: props.fontFamily,
+
                         color: getColor(charIndex),
                       }}
                       key={charIndex}

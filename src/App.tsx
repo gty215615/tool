@@ -3,6 +3,7 @@ import {
   Button,
   Flex,
   Form,
+  Input,
   InputNumber,
   Radio,
   Select,
@@ -19,6 +20,7 @@ import useHandle from "./hooks/useHandle";
 import { renderToString } from "react-dom/server";
 const backgrounds = [0, 1, 2, 3, 4, 5, 6, 7];
 export interface CopySetting {
+  title:string;
   bgStyle: number;
   bgColor: number;
   fontStyle: string;
@@ -35,6 +37,7 @@ const App: React.FC = () => {
   const iframe = useRef<HTMLIFrameElement>(null);
   const printContent = useRef<HTMLDivElement>(null);
   const [config, setConfig] = useState<CopySetting>({
+    title:"字帖",
     bgStyle: 0,
     bgColor: 1,
     fontStyle: "0",
@@ -43,7 +46,7 @@ const App: React.FC = () => {
     fontFamily: "Itner",
     fontColumn: 0,
   });
-  const [content, setContent] = useState(`“如梦令”是宋代词牌名`);
+  const [content, setContent] = useState(`如梦令是宋代词牌名`);
   const { copyBook } = useHandle(content, config.fontStyle);
   useEffect(() => {
     readyFont();
@@ -148,7 +151,7 @@ const App: React.FC = () => {
         return;
       }
       // const content = printContent.current.innerHTML;
-    
+
       const content = renderToString(
         <Print {...config} copyBook={copyBook}></Print>
       );
@@ -187,9 +190,13 @@ const App: React.FC = () => {
           initialValues={config}
           onValuesChange={onFormLayoutChange}
         >
+          <Form.Item label="字帖标题：" name="title">
+            <Input defaultValue="字帖" />
+          </Form.Item>
           <Form.Item label="背景格样式：" name="bgStyle">
             <Radio.Group options={data} />
           </Form.Item>
+
           <Form.Item label="背景格颜色：" name="bgColor">
             <Radio.Group
               options={[
@@ -279,6 +286,7 @@ const App: React.FC = () => {
           <Form.Item label="输入字帖文字：">
             <TextArea
               rows={4}
+              showCount
               onBlur={(e) => {
                 setContent(e.target.value);
               }}

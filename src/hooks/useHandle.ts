@@ -42,6 +42,7 @@ const useHandle = (content:string,fontStyle:string) => {
   // 全描填充
   const allDrawFill = (fonts: string[]) => {
     const rows = Math.ceil(fonts.length / PageRowCount) * PageRowCount;
+
     const pages: CopyPage[] = [];
     let index = 0;
     let page: CopyPage = [];
@@ -181,8 +182,11 @@ const useHandle = (content:string,fontStyle:string) => {
           pages = normalFill(fonts);
       }
       const page = pages[pages.length - 1];
-      
-      fillPage(page);
+      if(page.length == 0) {
+        pages.pop();
+      }else {
+        fillPage(page);
+      }
       setCopyBook(pages);
     } else {
       const page: CopyPage = [];

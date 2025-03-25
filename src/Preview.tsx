@@ -1,17 +1,19 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { FC } from "react";
 import "./App.css";
 import { CopySetting } from "./App";
 import PageFooter from "./PageFooter";
 import { FixedSizeList as List } from "react-window";
-import  { CopyPage, PageRowCount, RowFontCount } from "./hooks/useHandle";
+import { CopyPage, PageRowCount, RowFontCount } from "./hooks/useHandle";
+import PageHeader from "./PageHeader";
 
 const Preview: FC<
   CopySetting & {
     content: string;
-    copyBook:CopyPage[]
+    copyBook: CopyPage[];
   }
 > = (props) => {
- const {copyBook} = props;
+  const { copyBook } = props;
   const getColor = (index: number) => {
     let r;
     let g;
@@ -58,28 +60,33 @@ const Preview: FC<
     }
   };
   return (
-    <div  style={{paddingLeft:'10px'}}>
+    <div style={{ paddingLeft: "10px" }}>
       <div
         className="right"
-        style={{ width: `${RowFontCount * 80}px`, margin: "0px auto" }}
+        style={{
+          width: `${RowFontCount * 80}px`,
+          margin: "0px auto",
+          fontFamily: props.fontFamily,
+          color:getColor(0)
+        }}
       >
         {/* @ts-expect-error */}
         <List
           itemCount={copyBook.length}
-          itemSize={PageRowCount * 80}
-          height={PageRowCount * 80}
+          itemSize={PageRowCount * 80 + 80}
+          height={PageRowCount * 80 + 80}
           width={RowFontCount * 80}
         >
-          {({index}) => {
+          {({ index }) => {
             return (
               <div>
-                <ul key={index} style={{paddingLeft:'2px'}}>
+                <PageHeader title={props.title}></PageHeader>
+                <ul key={index} style={{ paddingLeft: "2px" }}>
                   {copyBook[index].map((char, charIndex) => {
                     return (
                       <li
                         style={{
                           backgroundImage: `url(svg/bg${props.bgStyle}${props.bgColor}.svg)`,
-                          fontFamily: props.fontFamily,
                           color: getColor(charIndex),
                         }}
                         key={charIndex}
