@@ -91,6 +91,8 @@ const Preview: FC<
                         style={{
                           backgroundImage: `url(svg/bg${props.bgStyle}${props.bgColor}.svg)`,
                           color: getColor(charIndex),
+                          paddingTop:`${props.marginVertical}px`,
+                          paddingLeft:`${props.marginHorizontal}px`,
                         }}
                         key={charIndex}
                       >

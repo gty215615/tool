@@ -28,6 +28,8 @@ export interface CopySetting {
   fontColor: number;
   fontFamily: string;
   fontColumn: number;
+  marginVertical: number;
+  marginHorizontal: number;
 }
 const App: React.FC = () => {
   const [form] = Form.useForm<CopySetting>();
@@ -45,6 +47,8 @@ const App: React.FC = () => {
     fontColor: 3,
     fontFamily: "Itner",
     fontColumn: 0,
+    marginVertical: 0,
+    marginHorizontal: 0,
   });
   const [content, setContent] = useState(`如梦令是宋代词牌名`);
   const { copyBook } = useHandle(content, config.fontStyle);
@@ -294,6 +298,12 @@ const App: React.FC = () => {
             />
           </Form.Item>
           <Form.Item label="每字行数：" name="fontColumn">
+            <InputNumber style={{ width: "100%" }} />
+          </Form.Item>
+          <Form.Item label="上边距：" name="marginVertical">
+            <InputNumber style={{ width: "100%" }} />
+          </Form.Item>
+          <Form.Item label="左边距：" name="marginHorizontal">
             <InputNumber style={{ width: "100%" }} />
           </Form.Item>
           <Form.Item>

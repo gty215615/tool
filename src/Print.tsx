@@ -79,7 +79,8 @@ const Print: FC<
                     <li
                       style={{
                         backgroundImage: `url(svg/bg${props.bgStyle}${props.bgColor}.svg)`,
-
+                        paddingTop:`${props.marginVertical}px`,
+                        paddingLeft:`${props.marginHorizontal}px`,
                         color: getColor(charIndex),
                       }}
                       key={charIndex}
