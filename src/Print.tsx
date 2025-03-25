@@ -11,16 +11,18 @@ const Print: FC<
   }
 > = (props) => {
   const { copyBook } = props;
-  const getColor = (index: number) => {
+  const getColor = (index: number,force = false) => {
     let r;
     let g;
 
     let b;
     let p = 9;
-    if (props.fontStyle === "0" || props.fontStyle === "1") {
+    if (props.fontStyle === "0" || props.fontStyle === "1" ||  props.fontStyle === '5') {
       // 全描
       const pos = index % RowFontCount;
       p = pos == 0 ? p : 3;
+      p = props.fontStyle === '5' && !force ? 3 : p;
+  
       if (props.fontColor === 1) {
         r = Math.round(p * -23 + 255);
         g = 255;
@@ -64,7 +66,7 @@ const Print: FC<
           width: `${RowFontCount * 80}px`,
           margin: "0px auto",
           fontFamily: props.fontFamily,
-          color:getColor(0)
+          color:getColor(0,true)
         }}
       >
         {copyBook.map((page, index) => {

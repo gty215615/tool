@@ -235,6 +235,7 @@ const App: React.FC = () => {
                 { value: "2", label: "不描" },
                 { value: "3", label: "常规" },
                 { value: "4", label: "隔行" },
+                { value: "5", label: "常规灰度" },
               ]}
             />
           </Form.Item>
