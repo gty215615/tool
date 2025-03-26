@@ -1007,6 +1007,25 @@ classnames@2.x, classnames@^2.2.1, classnames@^2.2.3, classnames@^2.2.5, classna
   resolved "https://registry.npmmirror.com/classnames/-/classnames-2.5.1.tgz"
   integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
 
+cnchar-all@^3.2.6:
+  version "3.2.6"
+  resolved "https://registry.npmmirror.com/cnchar-all/-/cnchar-all-3.2.6.tgz#14337688a16cc0fb6d4b7e07323b806d3d8c94ef"
+  integrity sha512-v6dVZSi5frcjPDdF3kpGrl4ti490EybMdmCzHaTH0A1OerKjd8Sz6+zfYtXoQ6SE/wh52AExi56p4S+vrR1q5w==
+  dependencies:
+    cnchar-types "^3.2.6"
+
+cnchar-types@^3.2.6:
+  version "3.2.6"
+  resolved "https://registry.npmmirror.com/cnchar-types/-/cnchar-types-3.2.6.tgz#32fb430e20b5f2298b3e611b40502597764c1170"
+  integrity sha512-LGU2ss7KcsI1Psme73+jffUX0ZDuChr6P9Rj2j8lynJHStklNpoC/+kheKSSUcXQ1u2KNvZt1Shs/5efcihHkg==
+
+cnchar@^3.2.6:
+  version "3.2.6"
+  resolved "https://registry.npmmirror.com/cnchar/-/cnchar-3.2.6.tgz#a2da9ab3b0cbee163e0f280578e15681c7cb7187"
+  integrity sha512-7Up5ALAkoOTAHlRMN0B7VgrrRsp6+trgFV0M7xSsZ0TwnnBfW68gXClcE9Oz8sTOEu+zqGOZjBhlHNzPIBckDA==
+  dependencies:
+    cnchar-types "^3.2.6"
+
 color-convert@^2.0.1:
   version "2.0.1"
   resolved "https://registry.npmmirror.com/color-convert/-/color-convert-2.0.1.tgz"

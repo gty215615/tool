@@ -8,6 +8,8 @@ import PageHeader from "./PageHeader";
 const Print: FC<
   CopySetting & {
     copyBook: CopyPage[];
+
+    useFontFamily:boolean
   }
 > = (props) => {
   const { copyBook } = props;
@@ -72,7 +74,7 @@ const Print: FC<
         {copyBook.map((page, index) => {
           return (
             <>
-              <PageHeader title={props.title}></PageHeader>
+              <PageHeader fontStyle={props.fontStyle} title={props.title}></PageHeader>
               <ul key={index} style={{ paddingLeft: "2px" }}>
                 {page.map((char, charIndex) => {
                   return (

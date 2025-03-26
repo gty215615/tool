@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-
+import cnchar from 'cnchar'
+import "cnchar-all"
 export type CopyPage = Array<string>;
 //字帖每一行的字数
 export const RowFontCount = 10;
@@ -160,6 +161,44 @@ const useHandle = (content:string,fontStyle:string) => {
     }
     return pages;
   };
+  // 笔顺填充
+  const sortCharFill = (fonts:string[]) => {
+   
+  
+    const pages: CopyPage[] = [];
+    let page: CopyPage = [];
+    pages.push(page);
+    let rowCount = 0;
+    for (const font of fonts) {
+      const chrs= font.stroke("order",'shape') as string[][];
+      const fontData = [font,...chrs[0]];
+      const rows = Math.ceil(fontData.length / RowFontCount)
+      for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < RowFontCount; x++) {
+          const index = y * RowFontCount + x;
+          if (index < fontData.length) {
+            if(fontData[index].indexOf("|") > -1) {
+              page.push(fontData[index].split('|')[0]);
+            }else {
+              page.push(fontData[index]);
+            }
+            
+          } else {
+            page.push(" ");
+          }
+        }
+        rowCount += 1;
+        if (rowCount == PageRowCount) {
+          rowCount = 0;
+          page = [];
+          pages.push(page);
+        }
+      }
+    }
+
+  
+    return pages;
+  }
   useEffect(() => {
     if (content) {
         console.log("props",content.length)
@@ -178,6 +217,9 @@ const useHandle = (content:string,fontStyle:string) => {
         case "4":
           pages = spaceFill(fonts);
           break;
+          case "6":
+            pages = sortCharFill(fonts);
+            break;
         default:
           pages = normalFill(fonts);
       }

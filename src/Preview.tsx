@@ -11,6 +11,7 @@ const Preview: FC<
   CopySetting & {
     content: string;
     copyBook: CopyPage[];
+    useFontFamily:boolean
   }
 > = (props) => {
   const { copyBook } = props;
@@ -83,7 +84,7 @@ const Preview: FC<
           {({ index }) => {
             return (
               <div>
-                <PageHeader title={props.title}></PageHeader>
+                <PageHeader fontStyle={props.fontStyle} title={props.title}></PageHeader>
                 <ul key={index} style={{ paddingLeft: "2px" }}>
                   {copyBook[index].map((char, charIndex) => {
                     return (
