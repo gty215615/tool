@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import cnchar from 'cnchar'
 import "cnchar-all"
 export type CopyPage = Array<string>;
 //字帖每一行的字数
